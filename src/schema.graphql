@@ -1,0 +1,31 @@
+type Query {
+  info: String!
+  quizes: [Quiz!]!
+  quiz(quizId: Int!): Quiz
+}
+
+type Quiz {
+  quizId: ID!
+  quizName: String!
+  quizCardIcon: String!
+  totalQuestions: Int!
+  questions: [Question!]!
+  answers: [Answer!]!
+}
+
+type Question {
+  questionId: Int!
+  question: String!
+  options: [Option!]!
+}
+
+type Option {
+  optionId: Int!
+  optionText: String!
+}
+
+type Answer {
+  questionId: Int!
+  correctOptionId: Int!
+  explanation: String
+}
